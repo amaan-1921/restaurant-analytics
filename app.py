@@ -48,7 +48,7 @@ cuisine_options = ["All"] + sorted(df["cuisines"].fillna("Unknown").unique().tol
 
 # Sidebar
 st.sidebar.title("Cognifyz Internship")
-st.sidebar.markdown("**Mohammed Amaan Thayyil | Restaurant Analytics**")
+st.sidebar.markdown("**Mohammed Amaan Thayyil | Restaurant Analytics Dashboard**")
 
 # Tabs
 tab0, tab1, tab2, tab3, tab4 = st.tabs(["Home", "Rating Prediction", "Resturant Recommendation", "Cuisine Classification", "Location Analysis"])
@@ -252,7 +252,7 @@ with tab3:
                 st.subheader("Top Predicted Cuisines")
                 for i, row in enumerate(st.session_state.cuisine_predictions.itertuples(), 1):
                     st.markdown(f"**{i}. {row.cuisine}**: {row.probability:.2%} probability")
-                st.markdown(f"**Model Performance**: Accuracy: {result['metrics']['accuracy']:.2f}, Precision: {result['metrics']['precision']:.2f}, Recall: {result['metrics']['recall']:.2f}")
+                #st.markdown(f"**Model Performance**: Accuracy: {result['metrics']['accuracy']:.2f}, Precision: {result['metrics']['precision']:.2f}, Recall: {result['metrics']['recall']:.2f}")
                 plot_path = "visuals/cuisine_prediction_task3.png"
                 if os.path.exists(plot_path):
                     st.image(plot_path, caption="Top Predicted Cuisines")
